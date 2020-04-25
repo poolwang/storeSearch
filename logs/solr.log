@@ -1,0 +1,171 @@
+INFO  - 2020-04-25 21:06:24.585; org.springframework.test.context.support.AbstractTestContextBootstrapper; Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO  - 2020-04-25 21:06:24.610; org.springframework.test.context.support.AbstractTestContextBootstrapper; Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c3bd550, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@91161c7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@604ed9f0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6a4f787b]
+INFO  - 2020-04-25 21:06:25.058; org.springframework.context.support.AbstractApplicationContext; Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:06:25 CST 2020]; root of context hierarchy
+WARN  - 2020-04-25 21:06:25.196; org.springframework.context.support.AbstractApplicationContext; Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [cn.wl.config.ContextConfig]; nested exception is java.io.FileNotFoundException: class path resource [sysproperties] cannot be opened because it does not exist
+ERROR - 2020-04-25 21:06:25.206; org.springframework.test.context.TestContextManager; Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5c3bd550] to prepare test instance [cn.wl.test.SolrTest@2ea6137]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [cn.wl.config.ContextConfig]; nested exception is java.io.FileNotFoundException: class path resource [sysproperties] cannot be opened because it does not exist
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:183)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:308)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:228)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:272)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:92)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:130)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:61)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:106)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:249)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: java.io.FileNotFoundException: class path resource [sysproperties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.core.io.support.EncodedResource.getReader(EncodedResource.java:138)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:94)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:72)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:58)
+	at org.springframework.core.io.support.ResourcePropertySource.<init>(ResourcePropertySource.java:65)
+	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:36)
+	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:442)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:273)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:247)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:200)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:169)
+	... 37 more
+INFO  - 2020-04-25 21:08:03.397; org.springframework.test.context.support.AbstractTestContextBootstrapper; Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO  - 2020-04-25 21:08:03.420; org.springframework.test.context.support.AbstractTestContextBootstrapper; Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c3bd550, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@91161c7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@604ed9f0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6a4f787b]
+INFO  - 2020-04-25 21:08:03.695; org.springframework.context.support.AbstractApplicationContext; Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:08:03 CST 2020]; root of context hierarchy
+WARN  - 2020-04-25 21:08:03.792; org.springframework.context.support.AbstractApplicationContext; Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [cn.wl.config.ContextConfig]; nested exception is java.io.FileNotFoundException: class path resource [sysproperties] cannot be opened because it does not exist
+ERROR - 2020-04-25 21:08:03.805; org.springframework.test.context.TestContextManager; Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5c3bd550] to prepare test instance [cn.wl.test.SolrTest@2ea6137]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [cn.wl.config.ContextConfig]; nested exception is java.io.FileNotFoundException: class path resource [sysproperties] cannot be opened because it does not exist
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:183)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:308)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:228)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:272)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:92)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:130)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:61)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:106)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:249)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: java.io.FileNotFoundException: class path resource [sysproperties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.core.io.support.EncodedResource.getReader(EncodedResource.java:138)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:94)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:72)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:58)
+	at org.springframework.core.io.support.ResourcePropertySource.<init>(ResourcePropertySource.java:65)
+	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:36)
+	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:442)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:273)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:247)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:200)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:169)
+	... 37 more
+INFO  - 2020-04-25 21:08:43.523; org.springframework.test.context.support.AbstractTestContextBootstrapper; Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO  - 2020-04-25 21:08:43.547; org.springframework.test.context.support.AbstractTestContextBootstrapper; Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c3bd550, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@91161c7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@604ed9f0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6a4f787b]
+INFO  - 2020-04-25 21:08:43.788; org.springframework.context.support.AbstractApplicationContext; Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:08:43 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:08:44.980; org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry; Mapped "{[/hello]}" onto public java.lang.String cn.wl.controller.HelloController.name()
+INFO  - 2020-04-25 21:08:45.065; org.springframework.web.servlet.handler.AbstractUrlHandlerMapping; Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
+INFO  - 2020-04-25 21:08:45.164; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:08:43 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:08:46.530; org.springframework.context.support.AbstractApplicationContext; Closing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:08:43 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:10:05.568; org.springframework.test.context.support.AbstractTestContextBootstrapper; Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO  - 2020-04-25 21:10:05.626; org.springframework.test.context.support.AbstractTestContextBootstrapper; Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c3bd550, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@91161c7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@604ed9f0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6a4f787b]
+INFO  - 2020-04-25 21:10:05.899; org.springframework.context.support.AbstractApplicationContext; Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:10:05 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:10:06.959; org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry; Mapped "{[/hello]}" onto public java.lang.String cn.wl.controller.HelloController.name()
+INFO  - 2020-04-25 21:10:07.033; org.springframework.web.servlet.handler.AbstractUrlHandlerMapping; Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
+INFO  - 2020-04-25 21:10:07.120; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:10:05 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:10:08.533; org.springframework.context.support.AbstractApplicationContext; Closing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:10:05 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:14:11.943; org.springframework.test.context.support.AbstractTestContextBootstrapper; Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO  - 2020-04-25 21:14:11.975; org.springframework.test.context.support.AbstractTestContextBootstrapper; Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c3bd550, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@91161c7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@604ed9f0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6a4f787b]
+INFO  - 2020-04-25 21:14:12.194; org.springframework.context.support.AbstractApplicationContext; Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:14:12 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:14:13.490; org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry; Mapped "{[/hello]}" onto public java.lang.String cn.wl.controller.HelloController.name()
+INFO  - 2020-04-25 21:14:13.607; org.springframework.web.servlet.handler.AbstractUrlHandlerMapping; Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
+INFO  - 2020-04-25 21:14:13.685; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:14:12 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:14:15.013; org.springframework.context.support.AbstractApplicationContext; Closing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:14:12 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:16:01.956; org.springframework.test.context.support.AbstractTestContextBootstrapper; Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO  - 2020-04-25 21:16:01.972; org.springframework.test.context.support.AbstractTestContextBootstrapper; Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c3bd550, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@91161c7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@604ed9f0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6a4f787b]
+INFO  - 2020-04-25 21:16:02.190; org.springframework.context.support.AbstractApplicationContext; Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:16:02 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:16:03.149; org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry; Mapped "{[/hello]}" onto public java.lang.String cn.wl.controller.HelloController.name()
+INFO  - 2020-04-25 21:16:03.227; org.springframework.web.servlet.handler.AbstractUrlHandlerMapping; Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
+INFO  - 2020-04-25 21:16:03.312; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:16:02 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:16:05.102; org.springframework.context.support.AbstractApplicationContext; Closing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:16:02 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:17:12.347; org.springframework.test.context.support.AbstractTestContextBootstrapper; Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO  - 2020-04-25 21:17:12.363; org.springframework.test.context.support.AbstractTestContextBootstrapper; Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c3bd550, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@91161c7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@604ed9f0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6a4f787b]
+INFO  - 2020-04-25 21:17:12.597; org.springframework.context.support.AbstractApplicationContext; Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:17:12 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:17:13.634; org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry; Mapped "{[/hello]}" onto public java.lang.String cn.wl.controller.HelloController.name()
+INFO  - 2020-04-25 21:17:13.714; org.springframework.web.servlet.handler.AbstractUrlHandlerMapping; Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
+INFO  - 2020-04-25 21:17:13.807; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:17:12 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:17:15.354; org.springframework.context.support.AbstractApplicationContext; Closing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:17:12 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:20:01.733; org.springframework.test.context.support.AbstractTestContextBootstrapper; Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO  - 2020-04-25 21:20:01.755; org.springframework.test.context.support.AbstractTestContextBootstrapper; Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c3bd550, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@91161c7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@604ed9f0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6a4f787b]
+INFO  - 2020-04-25 21:20:02.010; org.springframework.context.support.AbstractApplicationContext; Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:20:02 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:20:03.070; org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry; Mapped "{[/hello]}" onto public java.lang.String cn.wl.controller.HelloController.name()
+INFO  - 2020-04-25 21:20:03.151; org.springframework.web.servlet.handler.AbstractUrlHandlerMapping; Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
+INFO  - 2020-04-25 21:20:03.252; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:20:02 CST 2020]; root of context hierarchy
+INFO  - 2020-04-25 21:20:04.952; org.springframework.context.support.AbstractApplicationContext; Closing org.springframework.web.context.support.GenericWebApplicationContext@6fc6f14e: startup date [Sat Apr 25 21:20:02 CST 2020]; root of context hierarchy
+INFO  - 2020-04-26 00:28:20.675; org.springframework.test.context.support.AbstractTestContextBootstrapper; Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO  - 2020-04-26 00:28:20.712; org.springframework.test.context.support.AbstractTestContextBootstrapper; Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@685cb137, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6a41eaa2, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7cd62f43, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6d4b1c02]
+INFO  - 2020-04-26 00:28:20.973; org.springframework.context.support.AbstractApplicationContext; Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2286778: startup date [Sun Apr 26 00:28:20 CST 2020]; root of context hierarchy
+INFO  - 2020-04-26 00:28:26.566; org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry; Mapped "{[/productList]}" onto public java.lang.String cn.wl.controller.HelloController.queryProduct(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,org.springframework.ui.ModelMap)
+INFO  - 2020-04-26 00:28:26.631; org.springframework.web.servlet.handler.AbstractUrlHandlerMapping; Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
+INFO  - 2020-04-26 00:28:26.771; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@2286778: startup date [Sun Apr 26 00:28:20 CST 2020]; root of context hierarchy
+INFO  - 2020-04-26 00:28:31.617; org.springframework.context.support.AbstractApplicationContext; Closing org.springframework.web.context.support.GenericWebApplicationContext@2286778: startup date [Sun Apr 26 00:28:20 CST 2020]; root of context hierarchy
